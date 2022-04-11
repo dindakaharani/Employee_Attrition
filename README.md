@@ -1,6 +1,6 @@
 # Final_Project_Rakamin_Bootcamp
 
-Final Project Rakamin ini adalah membuat machine learning untuk data Attrition pada sebuah perusahaan.
+Final Project Rakamin ini adalah membuat machine learning untuk data Attrition pada sebuah perusahaan XYZ.
 
 1. [Exploratory Data Analysis](#exploratory-data-analysis)
 
