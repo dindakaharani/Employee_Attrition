@@ -6,76 +6,47 @@ Final Project Rakamin ini adalah membuat machine learning untuk data Attrition p
 
 2. [Data Preprocessing](#data-preprocessing)
 
-3. [Modeling Data](#modeling-data)
+3. [Data Modeling](#data-modeling)
 
-3.1. [Logistic Regression](#logistic-regression)
-
-3.2. [Decision Tree](#decision-tree)
-
-3.3. [XGBoost](#xgboost)
-
-3.4. [CatBoost](#catboost)
-
-3.5. [Random Forest](#random-forest)
 
 ## Exploratory Data Analysis
-Analisis ini berkaitan dengan mengeksplorasi variabel kategori dan numerik yang berbeda dan hubungannya dengan attrition. 
+Analisis ini berkaitan dengan mengeksplorasi variabel kategori dan numerik dan hubungannya dengan attrition. 
+
+Yang dilakukan pada tahap ini yaitu:
 
 ### 1. Checking Data
-
-```bash
-import pandas as pd
-df = pd.read_csv('HR-Employee-Attrition.csv')
-df.info()
-```
-![image.png](https://drive.google.com/file/d/1Jkek-qzo0NT1hOUCNG_Jd62KtQKNI3k8/view?usp=sharing)
-
-Pengamatan:
-Data terdiri dari 1470 baris
-Tidak ada kolom yang memiliki null/missing values
-Terdapat kolom dengan tipe data yang tidak sesuai, akan di handle pada saat preprocessing 
+Pada tahap ini dilakukan pengecekan terhadap dataset yang akan digunakan, apakah ada missing value atau apakah ada kolom dengan tipe dataset yang tidak sesuai, serta mengecek jumlah dataset.
 
 
-## Checking Duplicate
-```bash
-duplicate = df[df.duplicated()]
-print(duplicate)
-print('Jumlah data duplicate',df.duplicated().sum()
-```
+### Checking Duplicate
+Tahap ini melakukan pengecekan apakah dataset yang digunakan terindikasi adanya duplicate atau tidak.
 
-Pengamatan:
-Tidak ada data duplicate
+### Descriptive Statistics
+Memberikan ringkasan dari setiap kolom di dataset yang dapat memberikan gambaan besar keadaan data.
 
-## Descriptive Statistics
-```bash
-df[nums].describe()
-```
-```bash
-df[cats].describe()
-```
+### Pie Chart Attrition
+Melihat target label Attrition apakah target memiliki jumlah data yang timpang atau tidak.
 
-![image.png]
+### Univariate Analysis
+Pada tahap ini akan dilakukan analisis setiap kolom secara terpisah, melihat distribusi nilainya secara detail, serta melihat adanya outliers atau tidak
 
-Pengamatan:
-Kolom EmployeeCount, EmployeeNumber dan StandardHours hanya memiliki 1 nilai
-Kolom DistanceFromHome, MonthlyIncome, NumCompaniesWorked, PercentSalaryHike, TotalWorkingYears, YearsInCurrentRole, YearsSinceLastPromotion dan YearsWithCurrManager tampaknya skew ke kanan (long-right-tail)
-Untuk kolom yang memiliki 1 nilai akan di drop pada saat data pre-processing
-No-attrition data mendominasi dan kita akan melakukan SMOTE pada data Yes-Attrition. Persentase data attrion Yes : No = 17% : 83%
-Kita akan aplikasikan teknik encoding pada kolom: Attrition, Gender and OverTime
-Kita akan menggunakan teknik one-hot encoding pada columns : Business Travel, Department, Education Field, Job Role, Marital Status
-Data categoric didominasi oleh pegawai yang berusia diatas 18 tahun (Over18), tidak attrion (Attrition), jarang berpergian / perjalan bisnis (BusinessTravel), tidak lembur (OverTime), dan berasal dari department resert & development (Department) serta berjenis kelamin laki-laki(Gender)
-Data Over18 ternyata hanya memiliki 1 nilai, sehingga akan di drop pada saat data pre-processing
+### Multivariate Analysis
+Melakukan analisis beberapa kolom sekaligue untuk mencari hubungan antar kolom, melihat apakah feature meliki korelasi dengan target, atau apakah ada feature yang memiliki korelasi kuat dengan feature yang lain.
 
-## Pie Chart Attrition
+## Data Preprocessing
+Data preprocessing adalah proses untuk membersihkan data agar data dapat digunakan dan mempermudah proses analisis data dalam machine learning.
 
-```bash
-colors = ['#5B7DB1', '#FF6B6B']
-fig = go.Figure(data=[go.Pie(labels=['No','Yes'], values=df['Attrition'].value_counts())])
-fig.update_layout(autosize=False, width=400, height=350)
-fig.update_traces(marker=dict(colors=colors))
-fig.show()
-```
-No-attrition data mendominasi dan kita akan melakukan SMOTE pada data Yes-Attrition. Persentase data attrion Yes : No = 16,1% : 83,9%
+### Data Cleaning
+Pada tahap ini data akan dibersihkan melalui beberapa proses seperti mengisi nilai yang hilang, menghaluskan noisy data, dan menyelesaikan inkonsistensi yang ditemukan.
 
-## Univariate Analysis
+### Feature Encoding
+Pada tahap ini akan mengubah feature categorical menjadi feature numeric.
 
+### Feature Transformation
+Akan dilakukan scaling data dengan menggunakan standardization
+
+### Class Imbalance
+Menyeimbangkan data target supaya data seimbang atau tidak timpang.
+
+## Data Modeling
+Pada tahap ini akan dilakukan modeling data terhadap data yang sudah di pre-procesing dengan menggunakan metode supervised learning classification, dengan menggunakan beberapa algoritma classification seperti logistic regression, decision tree, random forest, xgboost dan catboost.
