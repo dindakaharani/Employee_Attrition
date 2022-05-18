@@ -14,7 +14,7 @@ Analisis ini berkaitan dengan mengeksplorasi variabel kategori dan numerik dan h
 
 Yang dilakukan pada tahap ini yaitu:
 
-### 1. Checking Data
+### Checking Data
 Pada tahap ini dilakukan pengecekan terhadap dataset yang akan digunakan, apakah ada missing value atau apakah ada kolom dengan tipe dataset yang tidak sesuai, serta mengecek jumlah dataset.
 
 
