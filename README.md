@@ -1,4 +1,4 @@
-# Final_Project_Rakamin_Bootcamp
+# Employee Attrition
 
 Final Project Rakamin ini adalah membuat machine learning untuk data Attrition pada sebuah perusahaan XYZ.
 
