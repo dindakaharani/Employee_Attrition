@@ -1,6 +1,8 @@
 # Employee Attrition
 
-Final Project Rakamin ini adalah membuat machine learning untuk data Attrition pada sebuah perusahaan XYZ.
+Repository ini untuk project kami di Bootcamp Data Science Rakamin Academy Batch 19A
+
+Project Rakamin ini adalah membuat machine learning untuk data HR (Attrition).
 
 1. [Exploratory Data Analysis](#exploratory-data-analysis)
 
