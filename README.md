@@ -33,7 +33,7 @@ Melihat target label Attrition apakah target memiliki jumlah data yang timpang a
 Pada tahap ini akan dilakukan analisis setiap kolom secara terpisah, melihat distribusi nilainya secara detail, serta melihat adanya outliers atau tidak
 
 ### Multivariate Analysis
-Melakukan analisis beberapa kolom sekaligue untuk mencari hubungan antar kolom, melihat apakah feature meliki korelasi dengan target, atau apakah ada feature yang memiliki korelasi kuat dengan feature yang lain.
+Melakukan analisis beberapa kolom sekaligus untuk mencari hubungan antar kolom, melihat apakah feature meliki korelasi dengan target, atau apakah ada feature yang memiliki korelasi kuat dengan feature yang lain.
 
 ## Data Preprocessing
 Data preprocessing adalah proses untuk membersihkan data agar data dapat digunakan dan mempermudah proses analisis data dalam machine learning.
